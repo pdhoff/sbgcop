@@ -2,7 +2,7 @@
 #' 
 #' Generate a random sample from the Wishart distribution.
 #' 
-#' Return the sum of nu i.i.d.  rank-one matrices generated as \code{z%*%t(z)},
+#' Return the sum of nu i.i.d.  rank-one matrices generated as \code{z\%*\%t(z)},
 #' where \code{z} is a sample from a multivariate normal distribution with
 #' covariance \code{S0}. The resulting random variable has mean \code{nu*S0}.
 #' 

@@ -9,6 +9,11 @@
 #' \code{quantiles}
 #' @author Peter Hoff
 #' @keywords array multivariate
+#'
+#' fit<-sbgcop.mcmc(swiss)
+#' qC<-qM.sM(fit$C.psamp)
+#' qR<-qM.sM(sR.sC(fit$C.psamp))
+#'
 "qM.sM" <-
 function(sM,quantiles=c(0.025,.5,.975)) {
 
