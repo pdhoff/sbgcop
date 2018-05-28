@@ -7,10 +7,10 @@ Author: Peter Hoff
 Maintainer: Peter Hoff <peter.hoff@duke.edu>
 Description: Estimation and inference for parameters in a Gaussian copula model,
         treating the univariate marginal distributions as nuisance
-        parameters as described in Hoff(2007). It also provides a
+        parameters as described in Hoff (2007) <doi:10.1214/07-AOAS107>. 
+        This package also provides a
         semiparametric imputation procedure for missing multivariate
         data.
 License: GPL (>= 2)
 URL: http://pdhoff.github.io/ 
-
-
+RoxygenNote: 6.0.1

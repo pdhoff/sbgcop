@@ -8,6 +8,12 @@
 #' @param mgp margin parameters
 #' @author Peter Hoff
 #' @keywords array
+#' @examples
+#'
+#' fit<-sbgcop.mcmc(swiss)
+#'
+#' plotci.sA(fit$C.psamp) 
+#'
 "plotci.sA" <-
 function(sA,ylabs=colnames(sA[,,1]),mgp=c(1.75,.75,0)) {
 qA<-qM.sM(sA)

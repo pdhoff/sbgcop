@@ -2,7 +2,8 @@
 #' 
 #' Estimation and inference for parameters in a Gaussian copula model, treating
 #' univariate marginal distributions as nuisance parameters as described in
-#' Hoff(2007). It also provides a semiparametric imputation procedure for
+#' Hoff (2007) <doi:10.1214/07-AOAS107>. This pacakge also provides a 
+#' semiparametric imputation procedure for
 #' missing multivariate data.
 #' 
 #' \tabular{ll}{ Package: \tab sbgcop\cr Type: \tab Package\cr Version: \tab
