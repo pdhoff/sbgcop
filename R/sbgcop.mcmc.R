@@ -69,12 +69,15 @@ set.seed(seed)
 R<-NULL
 for(j in 1:p) { R<-cbind(R, match(Y[,j],sort(unique(Y[,j])))) }
 Rlevels<-apply(R,2,max,na.rm=TRUE)
-Ranks<- apply(Y,2,rank,ties.method="max",na.last="keep")
+Ranks<- apply(Y,2,rank,ties.method="random",na.last="keep")
 N<-apply(!is.na(Ranks),2,sum)
 U<- t( t(Ranks)/(N+1))
 Z<-qnorm(U)
 Zfill<-matrix(rnorm(n*p),n,p)
-Z[is.na(Y)]<-Zfill[is.na(Y) ]
+Z[is.na(Y)]<-Zfill[is.na(Y) ] 
+Z<-sweep(Z,2,apply(Z,2,mean),"-") 
+Z<-sweep(Z,2,apply(Z,2,sd),"/") 
+ 
 S<-cov(Z)
 ##########
 
@@ -108,9 +111,12 @@ if(!plugin.marginal[j])
                        }
 }
 ir<-(1:n)[is.na(R[,j])]
-Z[ir,j]<-rnorm(length(ir),muj[ir],sdj)
+Z[ir,j]<-rnorm(length(ir),muj[ir],sdj) 
+
+## variable-specific group location update (see Liu and Sabatti [2000]) 
+Z[,j]<-Z[,j] - rnorm(1,mean(Z[,j]-muj),sdj/sqrt(n))   
+
                           }
-#### 
 
 #### update S
 S<-solve(rwish(solve(S0*n0+t(Z)%*%Z),n0+n))

@@ -7,7 +7,7 @@
 #' missing multivariate data.
 #' 
 #' \tabular{ll}{ Package: \tab sbgcop\cr Type: \tab Package\cr Version: \tab
-#' 0.980 \cr Date: \tab 2018-05-25\cr License: \tab GPL Version 2 or later \cr
+#' 1.0 \cr Date: \tab 2025-06-18\cr License: \tab GPL Version 2 or later \cr
 #' } This function produces MCMC samples from the posterior distribution of a
 #' correlation matrix, using a scaled inverse-Wishart prior distribution and an
 #' extended rank likelihood. It also provides imputation for missing values in
